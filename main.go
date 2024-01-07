@@ -70,9 +70,10 @@ func decryptHandle() {
 		panic("File not Found")
 	}
 
-	password := getPassword()
-
+	fmt.Print("Enter Password: ")
+	password, _ := term.ReadPassword(0)
 	fmt.Println("\n Decrypting...")
+
 	filecrypt.Decrypt(file, password)
 	fmt.Println("\n file successfuly decrypted")
 }
